@@ -3,9 +3,10 @@
 @section('content')
 <div class="container">
     <div class="row pb-5 pt-2">
-        <div class="col-8" >
+        <div class="col-lg-10" >
             <div class="d-flex justify-content-between pb-2">
-                <h4 class="d-flex">Homework Tasks</h4>
+                <h4>Homework Tasks</h4>
+                <button class="btn btn-primary">Add New Task</button>
                 <div class="dropdown text-right">
                     <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Sort
@@ -44,7 +45,7 @@
                 </a>
             </div>
         </div>
-        <div class="col-4">
+<!--        <div class="col-4">
             <h4>Exam Deadlines</h4>
             <div class="list-group">
                 <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
@@ -66,7 +67,7 @@
                     </div>
                 </a>
             </div>
-        </div>
+        </div>-->
     </div>
     <div class="row">
         <div class="col-4">
