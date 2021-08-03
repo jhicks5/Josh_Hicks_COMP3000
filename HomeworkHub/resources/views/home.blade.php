@@ -19,30 +19,16 @@
                 </div>
             </div>
             <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1 col-6">Trigonometry Homework</h5>
-                        <small class="text-muted col-2">3 days ago</small>
-                        <svg class="bi bi-chevron-right col-1" width="32" height="32" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6.646 3.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L12.293 10 6.646 4.354a.5.5 0 010-.708z"/></svg>
-                    </div>
-                    <p class="mb-1 col-6">Complete the attached worksheet.</p>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1 col-6">Literature analysis task</h5>
-                        <small class="text-muted col-2">1 day ago</small>
-                        <svg class="bi bi-chevron-right col-1" width="32" height="32" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6.646 3.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L12.293 10 6.646 4.354a.5.5 0 010-.708z"/></svg>
-                    </div>
-                    <p class="mb-1 col-6">Read through the text and write a review.</p>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1 col-6">Statistics Homework</h5>
-                        <small class="text-muted col-2">1 day ago</small>
-                        <svg class="bi bi-chevron-right col-1" width="32" height="32" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6.646 3.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L12.293 10 6.646 4.354a.5.5 0 010-.708z"/></svg>
-                    </div>
-                    <p class="mb-1 col-6">Complete the attached worksheet.</p>
-                </a>
+{{--                @foreach($user->tasks as $task)--}}
+                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+{{--                            <h5 class="mb-1 col-6">{{ $task->title }}</h5>--}}
+                            <small class="text-muted col-2">3 days ago</small>
+                            <svg class="bi bi-chevron-right col-1" width="32" height="32" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6.646 3.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L12.293 10 6.646 4.354a.5.5 0 010-.708z"/></svg>
+                        </div>
+                        <p class="mb-1 col-6">Complete the attached worksheet.</p>
+                    </a>
+{{--                @endforeach--}}
             </div>
         </div>
 <!--        <div class="col-4">
@@ -68,7 +54,7 @@
                 </a>
             </div>
         </div>-->
-    </div>
+<!--    </div>
     <div class="row">
         <div class="col-4">
             <h4>Screen Time</h4>
@@ -85,6 +71,6 @@
                 <div class="progress-bar bg-success text-dark" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">20 / 84 Hours</div>
             </div>
         </div>
-    </div>
+    </div>-->
 </div>
 @endsection

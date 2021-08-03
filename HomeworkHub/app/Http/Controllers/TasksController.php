@@ -25,11 +25,14 @@ class TasksController extends Controller
             'taskFile' => '',
         ]);
 
-//        \App\Models\Task::create($data);
+        $filePath = request('taskFile')->store('uploads', 'public');
 
-        auth()->user()->tasks()->create($data);
+        $this->create([
+            'title' => $data['title'],
+            'description' => $data['description'],
+            'taskFile' => $filePath,
+        ]);
 
-        dd(request()->all());
+        return redirect('/home');
     }
-
 }
