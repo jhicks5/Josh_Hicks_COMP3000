@@ -16,8 +16,11 @@ class TasksController extends Controller
         $data = request()->validate([
             'title' => 'required',
             'description' => 'required',
-//            'taskFile' => 'required',
+            'taskFile' => '',
         ]);
+
+        \App\Models\Task::create($data);
+
         dd(request()->all());
     }
 
