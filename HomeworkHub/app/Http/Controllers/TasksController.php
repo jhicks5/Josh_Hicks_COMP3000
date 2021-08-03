@@ -13,6 +13,11 @@ class TasksController extends Controller
 
     public function store()
     {
+        $data = request()->validate([
+            'title' => 'required',
+            'description' => 'required',
+//            'taskFile' => 'required',
+        ]);
         dd(request()->all());
     }
 

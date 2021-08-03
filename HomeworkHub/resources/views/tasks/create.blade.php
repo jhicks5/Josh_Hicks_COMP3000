@@ -46,9 +46,7 @@
                                 <input id="taskFile" type="file" class="form-control-file"  name="taskFile">
 
                                 @error('taskFile')
-                                <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
-                                    </span>
                                 @enderror
                             </div>
                         </div>
