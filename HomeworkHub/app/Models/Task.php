@@ -11,8 +11,8 @@ class Task extends Model
 
 //    protected $guarded = [];
 
-    public function task()
+    public function classroom()
     {
-        return $this->belongsTo(Task::class);
+        return $this->belongsTo(Classroom::class);
     }
 }

@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class TasksController extends Controller
 {
+    public function index($task)
+    {
+
+    }
+
     public function create()
     {
         return view('tasks.create');
