@@ -11,4 +11,9 @@ class TasksController extends Controller
         return view('tasks.create');
     }
 
+    public function store()
+    {
+        dd(request()->all());
+    }
+
 }
