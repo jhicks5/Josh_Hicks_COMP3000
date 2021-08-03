@@ -9,8 +9,12 @@
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TasksController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TasksController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Task.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Task.php" afterDir="false" />
 <<<<<<< HEAD
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_08_02_183627_create_tasks_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_08_02_183627_create_tasks_table.php" afterDir="false" />
+>>>>>>> parent of 46cabcc (Protected create task route)
 =======
       <change beforePath="$PROJECT_DIR$/database/migrations/2021_08_02_183627_create_tasks_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_08_02_183627_create_tasks_table.php" afterDir="false" />
 >>>>>>> parent of 46cabcc (Protected create task route)
@@ -211,7 +215,11 @@
       <workItem from="1624903487923" duration="422000" />
       <workItem from="1625240403664" duration="5334000" />
 <<<<<<< HEAD
+<<<<<<< HEAD
       <workItem from="1627915159713" duration="17593000" />
+=======
+      <workItem from="1627915159713" duration="13008000" />
+>>>>>>> parent of 46cabcc (Protected create task route)
 =======
       <workItem from="1627915159713" duration="13008000" />
 >>>>>>> parent of 46cabcc (Protected create task route)

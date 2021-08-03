@@ -19,7 +19,6 @@ class TasksController extends Controller
             'taskFile' => '',
         ]);
 
-<<<<<<< HEAD
         $filePath = request('taskFile')->store('uploads', 'public');
 
         $this->create([
@@ -27,9 +26,8 @@ class TasksController extends Controller
             'description' => $data['description'],
             'taskFile' => $filePath,
         ]);
-=======
+
         \App\Models\Task::create($data);
->>>>>>> parent of 46cabcc (Protected create task route)
 
         return redirect('/home');
     }
