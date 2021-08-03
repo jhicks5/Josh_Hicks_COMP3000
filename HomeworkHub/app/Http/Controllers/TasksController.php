@@ -6,12 +6,6 @@ use Illuminate\Http\Request;
 
 class TasksController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-
     public function create()
     {
         return view('tasks.create');
@@ -25,6 +19,7 @@ class TasksController extends Controller
             'taskFile' => '',
         ]);
 
+<<<<<<< HEAD
         $filePath = request('taskFile')->store('uploads', 'public');
 
         $this->create([
@@ -32,6 +27,9 @@ class TasksController extends Controller
             'description' => $data['description'],
             'taskFile' => $filePath,
         ]);
+=======
+        \App\Models\Task::create($data);
+>>>>>>> parent of 46cabcc (Protected create task route)
 
         return redirect('/home');
     }
