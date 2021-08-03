@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 
 class TasksController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+
     public function create()
     {
         return view('tasks.create');
@@ -19,7 +25,9 @@ class TasksController extends Controller
             'taskFile' => '',
         ]);
 
-        \App\Models\Task::create($data);
+//        \App\Models\Task::create($data);
+
+        auth()->user()->tasks()->create($data);
 
         dd(request()->all());
     }
