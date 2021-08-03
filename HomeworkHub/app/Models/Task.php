@@ -9,10 +9,10 @@ class Task extends Model
 {
     use HasFactory;
 
-//    protected $guarded = [];
+    protected $guarded = [];
 
     public function classroom()
     {
-        return $this->belongsTo(Classroom::class);
+        return $this->belongsTo(Classroom::class, 'id');
     }
 }

@@ -54,12 +54,12 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="class_id" class="col-md-4 col-form-label text-md-right">Class ID</label>
+                            <label for="classroom_id" class="col-md-4 col-form-label text-md-right">Class ID</label>
 
                             <div class="col-md-6">
-                                <input id="class_id" type="class_id" class="form-control @error('class_id') is-invalid @enderror" name="class_id" value="{{ old('class_id') }}" autocomplete="class_id">
+                                <input id="classroom_id" type="classroom_id" class="form-control @error('classroom_id') is-invalid @enderror" name="classroom_id" value="{{ old('classroom_id') }}" autocomplete="classroom_id">
 
-                                @error('class_id')
+                                @error('classroom_id')
                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

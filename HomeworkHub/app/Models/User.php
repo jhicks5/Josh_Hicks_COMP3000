@@ -20,7 +20,7 @@ class User extends Authenticatable
         'name',
         'email',
         'username',
-        'class_id',
+        'classroom_id',
         'password',
     ];
 
@@ -43,13 +43,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function tasks()
-    {
-        return $this->hasMany(Task::class);
-    }
+//    public function task()
+//    {
+//        return $this->hasMany(Task::class);
+//    }
 
     public function classroom()
     {
-        return $this->belongsTo(Classroom::class);
+        return $this->hasOne(Classroom::class, 'id');
     }
 }
