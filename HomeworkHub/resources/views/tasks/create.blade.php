@@ -15,7 +15,7 @@
                             <label for="title" class="col-md-4 col-form-label text-md-right">Task Title</label>
 
                             <div class="col-md-6">
-                                <input id="title" type="text" class="form-control @error('title') is-invalid @enderror" title="title" value="{{ old('title') }}" autofocus>
+                                <input id="title" type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title') }}" autofocus>
 
                                 @error('title')
                                 <span class="invalid-feedback" role="alert">
@@ -29,7 +29,7 @@
                             <label for="description" class="col-md-4 col-form-label text-md-right">Task Description</label>
 
                             <div class="col-md-6">
-                                <input id="description" type="text" class="form-control @error('description') is-invalid @enderror" title="description" value="{{ old('description') }}" autofocus>
+                                <input id="description" type="text" class="form-control @error('description') is-invalid @enderror" name="description" value="{{ old('description') }}" autofocus>
 
                                 @error('description')
                                 <span class="invalid-feedback" role="alert">
