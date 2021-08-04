@@ -7,12 +7,8 @@ use Illuminate\Http\Request;
 
 class ClassroomsController extends Controller
 {
-    public function index($classroom)
+    public function index(Classroom $classroom)
     {
-        $classroom = Classroom::find($classroom);
-
-        return view('home', [
-            'classroom' => $classroom,
-        ]);
+        return view('home', compact('classroom'));
     }
 }

@@ -23,4 +23,6 @@ Route::get('/classroom/{classroom}', [App\Http\Controllers\ClassroomsController:
 
 Route::get('/t/create', 'App\Http\Controllers\TasksController@create');
 
+Route::get('/t/{task}', 'App\Http\Controllers\TasksController@show');
+
 Route::post('/t', 'App\Http\Controllers\TasksController@store');

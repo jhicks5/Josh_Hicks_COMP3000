@@ -39,4 +39,10 @@ class TasksController extends Controller
 
         return redirect('/classroom/' . auth()->user()->classroom->id);
     }
+
+        public function show(\App\Models\Task $task)
+        {
+            return view('tasks.show', compact('task'));
+        }
+
 }
