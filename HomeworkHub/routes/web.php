@@ -17,14 +17,18 @@ use App\Http\Controllers;
 
 Auth::routes();
 
-Route::get('/', 'App\Http\Controllers\SchoolsController@index');
+Route::group(['middleware' => 'auth'], function () {
 
-Route::get('/classroom/{classroom}', [App\Http\Controllers\ClassroomsController::class, 'index'])->name('classroom.show');
+    Route::get('/', 'App\Http\Controllers\SchoolsController@index');
 
-Route::get('/school/{school}', [App\Http\Controllers\SchoolsController::class, 'index'])->name('school.show');
+    Route::get('/classroom/{classroom}', [App\Http\Controllers\ClassroomsController::class, 'index'])->name('classroom.show');
 
-Route::get('/task/create', 'App\Http\Controllers\TasksController@create');
+    Route::get('/school/{school}', [App\Http\Controllers\SchoolsController::class, 'index'])->name('school.show');
 
-Route::get('/task/{task}', 'App\Http\Controllers\TasksController@show');
+    Route::get('/task/create', 'App\Http\Controllers\TasksController@create');
 
-Route::post('/task', 'App\Http\Controllers\TasksController@store');
+    Route::get('/task/{task}', 'App\Http\Controllers\TasksController@show');
+
+    Route::post('/task', 'App\Http\Controllers\TasksController@store');
+
+});
