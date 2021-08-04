@@ -20,6 +20,7 @@ class User extends Authenticatable
         'name',
         'email',
         'username',
+        'school_id',
         'classroom_id',
         'password',
     ];
@@ -50,6 +51,16 @@ class User extends Authenticatable
 
     public function classroom()
     {
-        return $this->hasOne(Classroom::class, 'id');
+        return $this->hasMany(Classroom::class, 'id');
+    }
+
+    public function school()
+    {
+        return $this->hasOneThrough(School::class, Classroom::class);
+    }
+
+    public function task()
+    {
+        return $this->hasManyThrough(Task::class, Classroom::class);
     }
 }

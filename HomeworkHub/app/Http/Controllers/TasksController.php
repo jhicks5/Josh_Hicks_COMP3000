@@ -29,15 +29,18 @@ class TasksController extends Controller
 
         $filePath = request('taskFile')->store('uploads', 'public');
 
-        auth()->user()->classroom->task()->create([
+//        $rando = auth()->user()->classroom()->pluck('id');
+//        dd($rando);
+
+        auth()->user()->task()->create([
             'title' => $data['title'],
             'description' => $data['description'],
-            'classroom_id' => auth()->user()->classroom->id,
+            'classroom_id' => auth()->user()->classroom()->value('id'),
             'taskFile' => $filePath,
         ]);
 
 
-        return redirect('/classroom/' . auth()->user()->classroom->id);
+        return redirect('/classroom/' . auth()->user()->classroom()->value('id'));
     }
 
         public function show(\App\Models\Task $task)

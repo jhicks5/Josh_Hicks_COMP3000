@@ -9,6 +9,8 @@ class Classroom extends Model
 {
     use HasFactory;
 
+//    protected $guarded = [];
+
     public function user()
     {
         return $this->hasMany(User::class);
@@ -18,4 +20,11 @@ class Classroom extends Model
     {
         return $this->hasMany(Task::class);
     }
+
+    public function school()
+    {
+        return $this->hasOne(School::class, 'id');
+    }
+
 }
+

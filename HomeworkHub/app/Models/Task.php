@@ -15,4 +15,14 @@ class Task extends Model
     {
         return $this->belongsTo(Classroom::class, 'id');
     }
+
+    public function task()
+    {
+        return $this->hasManyThrough(Task::class, 'id');
+    }
+
+    public function school()
+    {
+        return $this->hasOneThrough(School::class, Classroom::class);
+    }
 }

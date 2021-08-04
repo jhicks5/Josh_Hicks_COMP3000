@@ -54,6 +54,20 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="school_id" class="col-md-4 col-form-label text-md-right">School ID</label>
+
+                            <div class="col-md-6">
+                                <input id="school_id" type="school_id" class="form-control @error('school_id') is-invalid @enderror" name="school_id" value="{{ old('school_id') }}" autocomplete="school_id">
+
+                                @error('school_id')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="classroom_id" class="col-md-4 col-form-label text-md-right">Class ID</label>
 
                             <div class="col-md-6">
