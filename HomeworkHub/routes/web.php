@@ -21,8 +21,10 @@ Route::get('/', 'App\Http\Controllers\SchoolsController@index');
 
 Route::get('/classroom/{classroom}', [App\Http\Controllers\ClassroomsController::class, 'index'])->name('classroom.show');
 
-Route::get('/t/create', 'App\Http\Controllers\TasksController@create');
+Route::get('/school/{school}', [App\Http\Controllers\SchoolsController::class, 'index'])->name('school.show');
 
-Route::get('/t/{task}', 'App\Http\Controllers\TasksController@show');
+Route::get('/task/create', 'App\Http\Controllers\TasksController@create');
 
-Route::post('/t', 'App\Http\Controllers\TasksController@store');
+Route::get('/task/{task}', 'App\Http\Controllers\TasksController@show');
+
+Route::post('/task', 'App\Http\Controllers\TasksController@store');
