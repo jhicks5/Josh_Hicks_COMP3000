@@ -37,4 +37,9 @@ class AdminController extends Controller
         $classes = Classroom::all();
         return view('admin\classes', ['classes' => $classes]);
     }
+
+    public function createStudent()
+    {
+        return view('admin.create.newstudent');
+    }
 }

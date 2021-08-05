@@ -42,6 +42,8 @@ Auth::routes();
 
     Route::get('/admin/classes', [App\Http\Controllers\AdminController::class, 'getClasses'])->name('classes.show');
 
+    Route::get('/admin/create/newstudent', 'App\Http\Controllers\AdminController@createStudent');
+
     Route::get('/school/{school}', [App\Http\Controllers\SchoolsController::class, 'index'])->name('school.show');
 
     Route::get('/task/create', 'App\Http\Controllers\TasksController@create');

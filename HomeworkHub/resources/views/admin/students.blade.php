@@ -7,8 +7,8 @@
     <div class="row pb-5 pt-2">
         <div class="col-lg-12" >
             <div class="d-flex justify-content-between pb-2">
-                <h4>Students </h4>
-                <button class="btn btn-primary" href="/task/create">Add New Student</button>
+                <h4>Students</h4>
+                <a class="btn btn-primary" href="{{ url('/admin/create/newstudent') }}">Add New Student</a>
             </div>
             <table class="table">
                 <thead>

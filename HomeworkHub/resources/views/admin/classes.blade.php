@@ -3,12 +3,12 @@
 @section('content')
 
 
-<div class="container">
+<div class="container position-relative">
     <div class="row pb-5 pt-2">
         <div class="col-lg-12" >
             <div class="d-flex justify-content-between pb-2">
                 <h4>Classes </h4>
-                <button class="btn btn-primary" href="/task/create">Add New Class</button>
+                <button class="btn btn-secondary" href="/task/create">Add New Class</button>
             </div>
             <table class="table">
                 <thead>

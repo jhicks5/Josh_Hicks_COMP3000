@@ -10,7 +10,7 @@
         </div>
     </div>
 
-    <div class="card-deck">
+    <div class="card-deck d-flex justify-content-center">
         <a href="/admin/students">
             <div class="card m-3 text-dark" style="width: 18rem;">
                 <img class="card-img-top mx-auto pt-3" style="height:50%; width:50%; object-fit: cover" src="/storage/images/reading.png" alt="Card image cap">
@@ -30,6 +30,15 @@
         </a>
 
         <a href="/admin/classes">
+            <div class="card m-3 text-dark" style="width: 18rem;">
+                <img class="card-img-top mx-auto pt-3" style="height:50%; width:50%;" src="/storage/images/document-files.png" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text h4">View Classes</p>
+                </div>
+            </div>
+        </a>
+
+        <a href="/admin/users">
             <div class="card m-3 text-dark" style="width: 18rem;">
                 <img class="card-img-top mx-auto pt-3" style="height:50%; width:50%;" src="/storage/images/document-files.png" alt="Card image cap">
                 <div class="card-body">

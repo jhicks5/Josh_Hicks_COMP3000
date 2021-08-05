@@ -8,7 +8,7 @@
         <div class="col-lg-12" >
             <div class="d-flex justify-content-between pb-2">
                 <h4>Teachers </h4>
-                <button class="btn btn-primary" href="/task/create">Add New Teachers</button>
+                <button class="btn btn-danger" href="/task/create">Add New Teacher</button>
             </div>
             <table class="table">
                 <thead>

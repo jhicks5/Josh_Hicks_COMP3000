@@ -6,7 +6,7 @@
         <div class="col-lg-12" >
             <div class="d-flex justify-content-between pb-2">
                 <h4>Classes for {{ $school->name }}</h4>
-                <button class="btn btn-primary" href="/task/create">Add New Class</button>
+{{--                <button class="btn btn-primary" href="/task/create">Add New Class</button>--}}
 <!--                <div class="dropdown text-right">
                     <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Sort
