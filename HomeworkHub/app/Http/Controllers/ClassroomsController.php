@@ -17,7 +17,7 @@ class ClassroomsController extends Controller
         return view('home', compact('classroom'));
     }
 
-    public function show(\App\Models\Classroom $classrooms)
+    public function show(Classroom $classrooms)
     {
         return view('classrooms.show', compact('classrooms'));
     }

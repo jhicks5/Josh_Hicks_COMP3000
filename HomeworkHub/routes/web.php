@@ -30,6 +30,10 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/classroom/{classroom}', [App\Http\Controllers\ClassroomsController::class, 'index'])->name('classroom.show');
 
+    Route::get('/admin/home', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.show');
+
+    Route::get('/admin/users', [App\Http\Controllers\AdminController::class, 'getUsers'])->name('users.show');
+
     Route::get('/school/{school}', [App\Http\Controllers\SchoolsController::class, 'index'])->name('school.show');
 
     Route::get('/task/create', 'App\Http\Controllers\TasksController@create');
@@ -37,5 +41,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/task/{task}', 'App\Http\Controllers\TasksController@show');
 
     Route::post('/task', 'App\Http\Controllers\TasksController@store');
+
+
 
 });

@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row pb-5 pt-2">
-        <div class="col-lg-10" >
+        <div class="col-lg-12" >
             <div class="d-flex justify-content-between pb-2">
                 <h4>Homework Tasks for {{ $classroom->classname }}</h4>
                 <a class="btn btn-primary" href="{{ url('/task/create') }}">Add New Task</a>
