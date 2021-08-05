@@ -87,6 +87,7 @@
                             <div class="col-md-6">
                                 <select id="role" type="role" class="form-select-lg @error('role') is-invalid @enderror" name="role" autocomplete="role" aria-label="Select Role">
                                     <option selected>Select account type</option>
+                                    <option value=0>Admin</option>
                                     <option value=1>Student</option>
                                     <option value=2>Teacher</option>
                                 </select>
