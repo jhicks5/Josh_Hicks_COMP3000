@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -29,7 +30,12 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/school/1';
+
+    protected function redirectTo()
+    {
+        $school = Auth::user()->school_id;
+        return '/school/' . $school;
+    }
 
     /**
      * Create a new controller instance.

@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Add new task') }}</div>
 
                 <div class="card-body">
-                    <form action="/t" enctype="multipart/form-data" method="post">
+                    <form action="/task" enctype="multipart/form-data" method="post">
                         @csrf
 
                         <div class="form-group row">

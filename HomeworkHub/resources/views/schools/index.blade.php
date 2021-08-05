@@ -22,7 +22,7 @@
                 @foreach($school->classroom as $class)
                     <a href="/classroom/{{ $class->id }}" class="list-group-item list-group-item-action flex-column align-items-start">
                         <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1 col-6">{{ $class->classname }}</h5>
+                            <h5 class="mb-1 col-6">Class {{ $class->id }}: {{ $class->classname }}</h5>
 {{--                            <small class="text-muted col-2">3 days ago</small>--}}
                             <svg class="bi bi-chevron-right col-1" width="32" height="32" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6.646 3.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L12.293 10 6.646 4.354a.5.5 0 010-.708z"/></svg>
                         </div>
@@ -54,8 +54,8 @@
                 </a>
             </div>
         </div>-->
-<!--    </div>
-    <div class="row">
+    </div>
+    <div class="d-flex justify-content-between">
         <div class="col-4">
             <h4>Screen Time</h4>
             <label>Daily / 3 Hrs</label>
@@ -71,6 +71,24 @@
                 <div class="progress-bar bg-success text-dark" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">20 / 84 Hours</div>
             </div>
         </div>
-    </div>-->
+    </div>
+
+    <div class="d-flex justify-content-between">
+        <div class="col-4">
+            <h4>Screen Time</h4>
+            <label>Daily / 3 Hrs</label>
+            <div class="progress" style="height: 30px;">
+                <div class="progress-bar bg-danger text-dark" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">3 / 3 Hours</div>
+            </div>
+            <label class="pt-2">Weekly / 21 Hrs</label>
+            <div class="progress" style="height: 30px;">
+                <div class="progress-bar bg-warning text-dark" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">10 / 21 Hours</div>
+            </div>
+            <label class="pt-2">Monthly / 84 Hrs</label>
+            <div class="progress" style="height: 30px;">
+                <div class="progress-bar bg-success text-dark" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">20 / 84 Hours</div>
+            </div>
+        </div>
+    </div>
 </div>
 @endsection

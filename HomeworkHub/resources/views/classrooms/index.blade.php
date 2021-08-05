@@ -6,7 +6,7 @@
         <div class="col-lg-10" >
             <div class="d-flex justify-content-between pb-2">
                 <h4>Homework Tasks for {{ $classroom->classname }}</h4>
-                <button class="btn btn-primary" href="/t/create">Add New Task</button>
+                <a class="btn btn-primary" href="{{ url('/task/create') }}">Add New Task</a>
                 <div class="dropdown text-right">
                     <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Sort
