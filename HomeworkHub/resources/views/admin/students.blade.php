@@ -21,13 +21,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                @foreach($users as $user)
+                @foreach($students as $student)
                     <tr>
-                        <th>{{ $user->id }}</th>
-                        <td>{{ $user->name }}</td>
-                        <td>{{ $user->email }}</td>
-                        <td>{{ $user->school_id }}</td>
-                        <td>{{ $user->classroom_id }}</td>
+                        <th>{{ $student->id }}</th>
+                        <td>{{ $student->name }}</td>
+                        <td>{{ $student->email }}</td>
+                        <td>{{ $student->school_id }}</td>
+                        <td>{{ $student->classroom_id }}</td>
                     </tr>
                 @endforeach
                 </tbody>

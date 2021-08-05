@@ -20,10 +20,16 @@ class AdminController extends Controller
         return view('home', compact('user'));
     }
 
-    public function getUsers()
+    public function getStudents()
     {
-        $users = User::all();
-        return view('admin\users', ['users' => $users]);
+        $students = User::all()->where('role', '==', '1');
+        return view('admin\students', ['students' => $students]);
+    }
+
+    public function getTeachers()
+    {
+        $teachers = User::all()->where('role', '==', '2');
+        return view('admin\teachers', ['teachers' => $teachers]);
     }
 
     public function getClasses()
@@ -31,10 +37,4 @@ class AdminController extends Controller
         $classes = Classroom::all();
         return view('admin\classes', ['classes' => $classes]);
     }
-
-    public function getTeachers()
-    {
-
-    }
-
 }

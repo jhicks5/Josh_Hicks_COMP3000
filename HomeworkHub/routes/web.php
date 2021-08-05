@@ -17,22 +17,28 @@ use App\Http\Controllers;
 
 Auth::routes();
 
-Route::group(['middleware' => 'auth'], function () {
+    Route::group(['middleware' => 'auth'], function () {
+        Route::get('/', function()
+        {
+            $school = Auth::user()->school_id;
+            return redirect('/school/' . $school);
+        });
+    });
 
-    Route::get('/', function(){
-        $school = Auth::user()->school_id;
-        return redirect('/school/' . $school);});
-
-//    Route::get('/logout', function(){
-//        Auth::logout();
-//        return Redirect::to('login');
+//    Route::group(['admin' => 'auth'], function() {
+//        $role = User()->role;
+//        if ($role == 0) {
+//            Route::get('/admin/');
+//        };
 //    });
 
     Route::get('/classroom/{classroom}', [App\Http\Controllers\ClassroomsController::class, 'index'])->name('classroom.show');
 
     Route::get('/admin/home', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.show');
 
-    Route::get('/admin/users', [App\Http\Controllers\AdminController::class, 'getUsers'])->name('users.show');
+    Route::get('/admin/students', [App\Http\Controllers\AdminController::class, 'getStudents'])->name('students.show');
+
+    Route::get('/admin/teachers', [App\Http\Controllers\AdminController::class, 'getTeachers'])->name('teachers.show');
 
     Route::get('/admin/classes', [App\Http\Controllers\AdminController::class, 'getClasses'])->name('classes.show');
 
@@ -40,11 +46,8 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/task/create', 'App\Http\Controllers\TasksController@create');
 
-
     Route::get('/task/{task}', 'App\Http\Controllers\TasksController@show');
 
     Route::post('/task', 'App\Http\Controllers\TasksController@store');
 
 
-
-});
