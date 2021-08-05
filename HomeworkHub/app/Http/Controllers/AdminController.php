@@ -20,14 +20,21 @@ class AdminController extends Controller
         return view('home', compact('user'));
     }
 
-//    public function show(User $users)
-//    {
-//        return view('users.show', compact('users'));
-//    }
-
-    public function getUsers(){
+    public function getUsers()
+    {
         $users = User::all();
         return view('admin\users', ['users' => $users]);
+    }
+
+    public function getClasses()
+    {
+        $classes = Classroom::all();
+        return view('admin\classes', ['classes' => $classes]);
+    }
+
+    public function getTeachers()
+    {
+
     }
 
 }

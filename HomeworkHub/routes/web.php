@@ -34,9 +34,12 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/admin/users', [App\Http\Controllers\AdminController::class, 'getUsers'])->name('users.show');
 
+    Route::get('/admin/classes', [App\Http\Controllers\AdminController::class, 'getClasses'])->name('classes.show');
+
     Route::get('/school/{school}', [App\Http\Controllers\SchoolsController::class, 'index'])->name('school.show');
 
     Route::get('/task/create', 'App\Http\Controllers\TasksController@create');
+
 
     Route::get('/task/{task}', 'App\Http\Controllers\TasksController@show');
 
