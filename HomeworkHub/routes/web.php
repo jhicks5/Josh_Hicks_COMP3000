@@ -19,7 +19,14 @@ Auth::routes();
 
 Route::group(['middleware' => 'auth'], function () {
 
-    Route::get('/', 'App\Http\Controllers\SchoolsController@index');
+    Route::get('/', function(){
+        $school = Auth::user()->school_id;
+        return redirect('/school/' . $school);});
+
+//    Route::get('/logout', function(){
+//        Auth::logout();
+//        return Redirect::to('login');
+//    });
 
     Route::get('/classroom/{classroom}', [App\Http\Controllers\ClassroomsController::class, 'index'])->name('classroom.show');
 

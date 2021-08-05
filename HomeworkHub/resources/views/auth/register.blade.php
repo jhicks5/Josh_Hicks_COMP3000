@@ -82,6 +82,24 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="role" class="col-md-4 col-form-label text-md-right">Select account type</label>
+
+                            <div class="col-md-6">
+                                <select id="role" type="role" class="form-select-lg @error('role') is-invalid @enderror" name="role" autocomplete="role" aria-label="Select Role">
+                                    <option selected>Select account type</option>
+                                    <option value="1">Student</option>
+                                    <option value="2">Teacher</option>
+                                </select>
+
+                                @error('role')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
