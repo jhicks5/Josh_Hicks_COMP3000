@@ -2,17 +2,46 @@
 
 @section('content')
 <div class="container">
+    <div class="row pb-5 pt-2">
+        <div class="col-lg-12" >
+            <div class="pb-4">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/students">Students</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/teachers">Teachers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/admins">Admins</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/classes">Classes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/register">+ New User</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/admin/newclass">+ New Class</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="d-flex justify-content-between">
+                <h4>New Class</h4>
+            </div>
+        </div>
+    </div>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Add new task') }}</div>
+                <div class="card-header">{{ __('Add New Class') }}</div>
 
                 <div class="card-body">
-                    <form action="/task" enctype="multipart/form-data" method="post">
+                    <form action="/classrooms" enctype="multipart/form-data" method="post">
                         @csrf
 
                         <div class="form-group row">
-                            <label for="title" class="col-md-4 col-form-label text-md-right">Task Title</label>
+                            <label for="title" class="col-md-4 col-form-label text-md-right">Class Name</label>
 
                             <div class="col-md-6">
                                 <input id="title" type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title') }}" autofocus>
@@ -21,32 +50,6 @@
                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="description" class="col-md-4 col-form-label text-md-right">Task Description</label>
-
-                            <div class="col-md-6">
-                                <input id="description" type="text" class="form-control @error('description') is-invalid @enderror" name="description" value="{{ old('description') }}" autofocus>
-
-                                @error('description')
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="taskFile" class="col-md-4 col-form-label text-md-right">{{ __('Upload Attachment') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="taskFile" type="file" class="form-control-file"  name="taskFile">
-
-                                @error('taskFile')
-                                        <strong>{{ $message }}</strong>
                                 @enderror
                             </div>
                         </div>

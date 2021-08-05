@@ -21,4 +21,27 @@ class ClassroomsController extends Controller
     {
         return view('classrooms.show', compact('classrooms'));
     }
+
+    public function create()
+    {
+        return view('admin.create.newclass');
+    }
+
+    public function store()
+    {
+
+        $data = request()->validate([
+            'school_id' => 'required',
+            'classname' => 'required',
+        ]);
+
+        dd(auth()->user()->school_id);
+
+        auth()->user()->classroom()->create([
+            'school_id' => auth()->user()->school_id,
+            'classname' => $data['classname'],
+        ]);
+
+        return redirect('/admin/classes');
+    }
 }

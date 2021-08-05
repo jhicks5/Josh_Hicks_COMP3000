@@ -40,9 +40,9 @@
 
         <a href="/admin/users">
             <div class="card m-3 text-dark" style="width: 18rem;">
-                <img class="card-img-top mx-auto pt-3" style="height:50%; width:50%;" src="/storage/images/document-files.png" alt="Card image cap">
+                <img class="card-img-top mx-auto pt-3" style="height:50%; width:50%;" src="/storage/images/reading.png" alt="Card image cap">
                 <div class="card-body">
-                    <p class="card-text h4">View Classes</p>
+                    <p class="card-text h4">View Users</p>
                 </div>
             </div>
         </a>

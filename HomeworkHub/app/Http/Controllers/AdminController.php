@@ -20,6 +20,12 @@ class AdminController extends Controller
         return view('home', compact('user'));
     }
 
+    public function getAdmins()
+    {
+        $admins = User::all()->where('role', '==', '0');
+        return view('admin\admins', ['admins' => $admins]);
+    }
+
     public function getStudents()
     {
         $students = User::all()->where('role', '==', '1');

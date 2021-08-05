@@ -40,9 +40,11 @@ Auth::routes();
 
     Route::get('/admin/teachers', [App\Http\Controllers\AdminController::class, 'getTeachers'])->name('teachers.show');
 
+    Route::get('/admin/admins', [App\Http\Controllers\AdminController::class, 'getAdmins'])->name('admins.show');
+
     Route::get('/admin/classes', [App\Http\Controllers\AdminController::class, 'getClasses'])->name('classes.show');
 
-    Route::get('/admin/create/newstudent', 'App\Http\Controllers\AdminController@createStudent');
+    Route::get('/admin/newclass', 'App\Http\Controllers\ClassroomsController@create');
 
     Route::get('/school/{school}', [App\Http\Controllers\SchoolsController::class, 'index'])->name('school.show');
 
