@@ -1,12 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row pb-5 pt-2">
+<div class="container pt-lg-4">
+    <div class="row pb-5 pt-1">
         <div class="col-lg-12" >
-            <div class="d-flex justify-content-between pb-2">
+            <div class="d-flex justify-content-between pb-4">
                 <h4>Homework Tasks for {{ $classroom->classname }}</h4>
-                <a class="btn btn-primary" href="{{ url('/task/create') }}">Add New Task</a>
+                @if(auth()->User()->role == 2 && $classroom->id == auth()->User()->classroom_id)
+                <a class="btn btn-primary mr-lg-5 float-left" href="{{ url('/task/create') }}">Add New Task</a>
+                @endif
                 <div class="dropdown text-right">
                     <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Sort

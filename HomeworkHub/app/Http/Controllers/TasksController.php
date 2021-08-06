@@ -34,11 +34,11 @@ class TasksController extends Controller
         auth()->user()->task()->create([
             'title' => $data['title'],
             'description' => $data['description'],
-            'classroom_id' => auth()->user()->classroom()->value('id'),
+            'classroom_id' => auth()->user()->classroom_id,
             'taskFile' => $filePath,
         ]);
 
-        return redirect('/classroom/' . auth()->user()->classroom()->value('id'));
+        return redirect('/classroom/' . auth()->user()->classroom_id);
     }
 
     public function show(\App\Models\Task $task)
