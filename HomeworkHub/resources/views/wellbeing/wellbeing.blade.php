@@ -1,6 +1,9 @@
 
 
 @if(auth()->User()->role == 1)
+
+    <link rel="stylesheet" type="text/css" href="{{ url('/css/animation.css') }}" />
+
     <div class="col-lg-4">
         <h4>Screen Time this Session</h4>
         <h5>Remember to log out once you're done to reset the timers</h5>
@@ -34,6 +37,38 @@
         <h6>Although there's no set limit on how long you're allowed to sit for, those in professions which involved sitting for long periods of time were
             TWICE as likely do develop heart attacks! So make sure to stand every once in a while.</h6>
     </div>
+
+    <div style="position: absolute; top: 25px; right: 25px;">
+        <div class="toast" role="alert" aria-live="assertive" aria-atomic="true"
+             id="20mToast" style="position: relative">
+            <div class="toast-header">
+                <strong class="mr-auto"><i class="fa fa-grav"></i> Have an eye break</strong>
+                <small>just now</small>
+                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
+            </div>
+            <div class="toast-body">20 Minutes has passed, now is a good time for an eye break!</div>
+        </div>
+
+        <div class="toast" role="alert" aria-live="assertive" aria-atomic="true"
+             id="1hToast" style="">
+            <div class="toast-header">
+                <strong class="mr-auto"><i class="fa fa-grav"></i> Stretch your Legs</strong>
+                <small>just now</small>
+                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
+            </div>
+            <div class="toast-body">20 Minutes has passed, now is a good time for an eye break!</div>
+        </div>
+
+        <div class="toast" role="alert" aria-live="assertive" aria-atomic="true"
+             id="3hToast" style="">
+            <div class="toast-header">
+                <strong class="mr-auto"><i class="fa fa-grav"></i> Have a nice long Break</strong>
+                <small>just now</small>
+                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
+            </div>
+            <div class="toast-body">20 Minutes has passed, now is a good time for an eye break!</div>
+        </div>
+    </div>
     @endif
 
     <script>
@@ -47,6 +82,7 @@
         var tick20;
         var percent1h;
         var percent3h;
+        var notification = new Audio('/public/sounds/notificationsound.mp3');
 
         function getTimeSpentOnSite(){
             timeSpentOnSite = parseInt(localStorage.getItem('timeSpentOnSite'));
@@ -67,6 +103,11 @@
                 if(tsparsed > 1200){
                     var numfills20 = Math.floor(((100 / 1200) * tsparsed) / 100);
                     percent20m = (((100 / 1200) * tsparsed) - (100*numfills20));
+                    if (percent20m >= 99 ?? percent20m <= 102){
+                        $("#20mToast").toast({ autohide: false });
+                        $("#20mToast").toast('show');
+                        notification.play();
+                    }
                 }
                 else{
                     percent20m = (100 / 1200) * tsparsed;
@@ -75,6 +116,12 @@
                 if(tsparsed > 3600){
                     var numfills1h = Math.floor(((100 / 3600) * tsparsed) / 100);
                     percent1h = (((100 / 3600) * tsparsed) - (100*numfills1h));
+                    if (percent1h >= 99.8 ?? percent1h <= 102){
+                        $("#1hToast").toast({ autohide: false });
+                        $("#1hToast").toast('show');
+                        // notification.play();
+                        // notification.play();
+                    }
                 }
                 else{
                     percent1h = (100 / 3600) * tsparsed;
@@ -83,6 +130,11 @@
                 if(tsparsed > 10800){
                     var numfills3h = Math.floor(((100 / 10800) * tsparsed) / 100);
                     percent3h = (((100 / 10800) * tsparsed) - (100*numfills3h));
+                    if (percent3h >= 99.8 ?? percent3h <= 102){
+                        $("#3hToast").toast({ autohide: false });
+                        $("#3hToast").toast('show');
+                        // notification.play();
+                    }
                 }
                 else{
                     percent3h = (100 / 10800) * tsparsed;
@@ -93,6 +145,7 @@
                 document.getElementById('progressbar1h').style.width = percent1h + '%';
 
                 document.getElementById('progressbar3h').style.width = percent3h + '%';
+
             },1000);
         }
 
