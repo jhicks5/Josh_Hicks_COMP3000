@@ -23,18 +23,31 @@ Auth::routes();
             $school = Auth::user()->school_id;
             return redirect('/school/' . $school);
         });
+        Route::get('/task/{task}', 'App\Http\Controllers\TasksController@show');
+        Route::post('/task', 'App\Http\Controllers\TasksController@store');
+
+        Route::get('/school/{school}', [App\Http\Controllers\SchoolsController::class, 'index'])->name('school.show');
+
+        Route::get('/classroom/{classroom}', [App\Http\Controllers\ClassroomsController::class, 'index'])->name('classroom.show');
     });
 
-//    Route::group(['admin' => 'auth'], function() {
-//        $role = User()->role;
-//        if ($role == 0) {
-//            Route::get('/admin/');
-//        };
-//    });
+    Route::group(['middleware' => 'auth'], function() {
+        Route::get('/admin', function(){
+            if (Auth::check()){
+                $role = auth::User()->role;
+                if ($role == 0) {
+                    Route::get('/admin/');
+                    Route::get('/admin/home', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.show');
+                };
+            }
+        });
 
-    Route::get('/classroom/{classroom}', [App\Http\Controllers\ClassroomsController::class, 'index'])->name('classroom.show');
 
-    Route::get('/admin/home', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.show');
+    });
+
+
+
+
 
     Route::get('/admin/students', [App\Http\Controllers\AdminController::class, 'getStudents'])->name('students.show');
 
@@ -46,12 +59,10 @@ Auth::routes();
 
     Route::get('/admin/newclass', 'App\Http\Controllers\ClassroomsController@create');
 
-    Route::get('/school/{school}', [App\Http\Controllers\SchoolsController::class, 'index'])->name('school.show');
+
 
     Route::get('/task/create', 'App\Http\Controllers\TasksController@create');
 
-    Route::get('/task/{task}', 'App\Http\Controllers\TasksController@show');
 
-    Route::post('/task', 'App\Http\Controllers\TasksController@store');
 
 

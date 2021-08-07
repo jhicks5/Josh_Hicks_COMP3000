@@ -2,8 +2,6 @@
 
 @section('content')
 
-
-
 <div class="container pt-lg-4">
     <div class="row">
         <div class="col-lg-8" >
@@ -34,22 +32,10 @@
                     </tr>
                 </tbody>
             </table>
-
-
-
         </div>
         @include('wellbeing.wellbeing')
     </div>
-
-    <div class="row">
-
-    </div>
-
 </div>
-
-<script>
-</script>
-
 
 
 @endsection
