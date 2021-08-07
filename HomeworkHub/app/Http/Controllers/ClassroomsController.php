@@ -35,8 +35,6 @@ class ClassroomsController extends Controller
             'classname' => 'required',
         ]);
 
-        dd(auth()->user()->school_id);
-
         auth()->user()->classroom()->create([
             'school_id' => auth()->user()->school_id,
             'classname' => $data['classname'],
