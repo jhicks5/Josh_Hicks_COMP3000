@@ -32,9 +32,18 @@ class LoginController extends Controller
 
     protected function redirectTo()
     {
-        $school = Auth::user()->school_id;
-        return '/school/' . $school;
+        if(Auth::user()->role == '0')
+        {
+            return '/admin/students';
+//            return redirect()->route('students.show');
+        }else{
+            $school = Auth::user()->school_id;
+            return '/school/' . $school;
+        }
+
+
     }
+
 
 //    protected $redirectTo = '/school/' . User()->;
 

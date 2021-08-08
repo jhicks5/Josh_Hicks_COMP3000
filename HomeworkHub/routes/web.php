@@ -22,8 +22,13 @@ Auth::routes();
         Route::get('/task/create', 'App\Http\Controllers\TasksController@create');
         Route::get('/', function()
         {
-            $school = Auth::user()->school_id;
-            return redirect('/school/' . $school);
+            if(Auth::user()-> role == 0){
+                return redirect('/admin/students');
+            }else {
+                $school = Auth::user()->school_id;
+                return redirect('/school/' . $school);
+            }
+
         });
         Route::get('/task/{task}', 'App\Http\Controllers\TasksController@show');
 
