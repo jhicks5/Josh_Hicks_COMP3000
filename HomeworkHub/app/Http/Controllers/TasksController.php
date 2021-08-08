@@ -31,8 +31,6 @@ class TasksController extends Controller
             $filePath = request('taskFile')->store('uploads', 'public');
         }
 
-        $rando = auth()->user()->classroom()->pluck('id');
-
         auth()->user()->task()->create([
             'title' => $data['title'],
             'description' => $data['description'],

@@ -45,6 +45,7 @@ Auth::routes();
         Route::get('/admin/admins', [App\Http\Controllers\AdminController::class, 'getAdmins'])->name('admins.show');
         Route::get('/admin/classes', [App\Http\Controllers\AdminController::class, 'getClasses'])->name('classes.show');
         Route::get('/admin/newclass', 'App\Http\Controllers\ClassroomsController@create');
+        Route::post('/admin/store', 'App\Http\Controllers\ClassroomsController@store');
     });
 
 

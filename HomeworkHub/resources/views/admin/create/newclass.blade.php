@@ -37,16 +37,29 @@
                 <div class="card-header">{{ __('Add New Class') }}</div>
 
                 <div class="card-body">
-                    <form action="/classrooms" enctype="multipart/form-data" method="post">
+                    <form action="/admin/store" enctype="multipart/form-data" method="post">
                         @csrf
-
                         <div class="form-group row">
-                            <label for="title" class="col-md-4 col-form-label text-md-right">Class Name</label>
+                            <label for="school_id" class="col-md-4 col-form-label text-md-right">School ID</label>
 
                             <div class="col-md-6">
-                                <input id="title" type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title') }}" autofocus>
+                                <input id="school_id" type="text" class="form-control @error('school_id') is-invalid @enderror" name="school_id" value="{{ old('school_id') ?? auth()->User()->school_id }}" autofocus>
 
-                                @error('title')
+                                @error('school_id')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="classname" class="col-md-4 col-form-label text-md-right">Class Name</label>
+
+                            <div class="col-md-6">
+                                <input id="classname" type="text" class="form-control @error('classname') is-invalid @enderror" name="classname" value="{{ old('classname') }}" autofocus>
+
+                                @error('classname')
                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -57,7 +70,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Upload') }}
+                                    {{ __('Create') }}
                                 </button>
                             </div>
                         </div>

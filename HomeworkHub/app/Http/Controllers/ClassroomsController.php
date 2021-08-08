@@ -29,14 +29,13 @@ class ClassroomsController extends Controller
 
     public function store()
     {
-
         $data = request()->validate([
             'school_id' => 'required',
             'classname' => 'required',
         ]);
 
         auth()->user()->classroom()->create([
-            'school_id' => auth()->user()->school_id,
+            'school_id' => $data['school_id'],
             'classname' => $data['classname'],
         ]);
 
