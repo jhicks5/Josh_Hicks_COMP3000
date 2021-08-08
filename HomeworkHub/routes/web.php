@@ -17,18 +17,21 @@ use App\Http\Controllers;
 
 Auth::routes();
     Route::group(['middleware' => ['auth', 'admin']], function() {
+        Route::get('/class/create', 'App\Http\Controllers\ClassroomsController@create');
+        Route::post('/class', 'App\Http\Controllers\ClassroomsController@store');
         Route::get('/admin/');
-    //        Route::get('/admin/home', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.show');
         Route::get('/admin/students', [App\Http\Controllers\AdminController::class, 'getStudents'])->name('students.show');
         Route::get('/admin/teachers', [App\Http\Controllers\AdminController::class, 'getTeachers'])->name('teachers.show');
         Route::get('/admin/admins', [App\Http\Controllers\AdminController::class, 'getAdmins'])->name('admins.show');
         Route::get('/admin/classes', [App\Http\Controllers\AdminController::class, 'getClasses'])->name('classes.show');
-        Route::get('/admin/newclass', 'App\Http\Controllers\ClassroomsController@create');
-        Route::post('/admin/store', 'App\Http\Controllers\ClassroomsController@store');
+    });
+
+    Route::group(['middleware' => ['auth', 'teacher']], function() {
+        Route::get('/task/create', 'App\Http\Controllers\TasksController@create');
+        Route::post('/task', 'App\Http\Controllers\TasksController@store');
     });
 
     Route::group(['middleware' => 'auth'], function () {
-        Route::get('/task/create', 'App\Http\Controllers\TasksController@create');
         Route::get('/', function()
         {
             if(Auth::user()-> role == 0){
@@ -41,7 +44,7 @@ Auth::routes();
         });
         Route::get('/task/{task}', 'App\Http\Controllers\TasksController@show');
 
-        Route::post('/task', 'App\Http\Controllers\TasksController@store');
+
         Route::get('/school/{school}', [App\Http\Controllers\SchoolsController::class, 'index'])->name('school.show');
         Route::get('/classroom/{classroom}', [App\Http\Controllers\ClassroomsController::class, 'index'])->name('classroom.show');
     });

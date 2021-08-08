@@ -52,7 +52,7 @@ class User extends Authenticatable
 
     public function classroom()
     {
-        return $this->hasMany(Classroom::class, 'id');
+        return $this->belongsTo(Classroom::class, 'id');
     }
 
     public function school()

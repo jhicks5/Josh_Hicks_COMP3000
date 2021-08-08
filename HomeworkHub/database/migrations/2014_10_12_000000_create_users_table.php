@@ -18,8 +18,8 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('username')->unique();
-            $table->foreignId('school_id');
-            $table->foreignId('classroom_id');
+            $table->foreignId('school_id')->constrained();
+            $table->foreignId('classroom_id')->constrained();
             $table->integer('role');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

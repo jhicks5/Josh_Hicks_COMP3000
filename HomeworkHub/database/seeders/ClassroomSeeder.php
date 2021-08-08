@@ -18,21 +18,21 @@ class ClassroomSeeder extends Seeder
     {
         // Insert test classrooms
         $classrooms = array (
-            array('Class One', 1),
-            array('Class Two', 1),
-            array('Class Three', 1),
-            array('Class Four', 1),
-            array('Class Five', 1),
-            array('Class Six', 1),
-            array('Class Seven', 1),
-            array('Class Amend Test', 1)
+            array(1, 'Class One'),
+            array(1, 'Class Two'),
+            array(1, 'Class Three'),
+            array(1, 'Class Four'),
+            array(1, 'Class Five'),
+            array(1, 'Class Six'),
+            array(1, 'Class Seven'),
+            array(1, 'Class Amend Test')
 
         );
 
         foreach ($classrooms as $room) {
             DB::table('classrooms')->insert([
-                'classname' => $room[0],
-                'school_id' => $room[1],
+                'school_id' => $room[0],
+                'classname' => $room[1],
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ]);

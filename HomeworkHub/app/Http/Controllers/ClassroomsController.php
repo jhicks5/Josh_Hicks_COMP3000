@@ -24,7 +24,7 @@ class ClassroomsController extends Controller
 
     public function create()
     {
-        return view('admin.create.newclass');
+        return view('classrooms.create');
     }
 
     public function store()
