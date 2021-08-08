@@ -16,6 +16,10 @@
                     </tr>
                     <tr>
                         <th>Attachment</th>
+
+                        @if ($task->taskFile == '')
+                            <td>N/A</td>
+                        @else
                         <td><a download="/storage/{{ $task->taskFile }}" href="/storage/{{ $task->taskFile }}">
                                 <div>
                                     <span class="pr-2">Download Attachment</span>
@@ -24,7 +28,9 @@
                                         <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
                                     </svg>
                                 </div>
-                            </a></td>
+                            </a>
+                        </td>
+                        @endif
                     </tr>
                     <tr>
                         <th>Description</th>
