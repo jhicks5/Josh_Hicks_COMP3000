@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+    @if(session()->has('success'))
+        <div class="alert alert-success">
+            {{ session()->get('success') }}
+        </div>
+    @endif
 <div class="container">
     <div class="row pb-5 pt-2">
         <div class="col-lg-12" >
@@ -164,4 +169,7 @@
         </div>
     </div>
 </div>
+    <script>
+        setInterval(function(){$(".alert").alert('close')},3000);
+    </script>
 @endsection
