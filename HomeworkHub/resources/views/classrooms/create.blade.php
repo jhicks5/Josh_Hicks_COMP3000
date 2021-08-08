@@ -43,7 +43,7 @@
                                 <label for="school_id" class="col-md-4 col-form-label text-md-right">School ID</label>
 
                                 <div class="col-md-6">
-                                    <input id="school_id" type="text" class="form-control @error('school_id') is-invalid @enderror" name="school_id" value="{{ old('school_id') ?? auth()->User()->school_id }}" autofocus>
+                                    <input id="school_id" type="text" class="form-control @error('school_id') is-invalid @enderror" name="school_id" value="{{ old('school_id') ?? auth()->User()->school_id }}" autofocus disabled>
 
                                     @error('school_id')
                                     <span class="invalid-feedback" role="alert">

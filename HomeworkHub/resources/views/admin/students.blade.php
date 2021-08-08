@@ -25,7 +25,7 @@
                         <a class="nav-link" href="/register">+ New User</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/admin/newclass">+ New Class</a>
+                        <a class="nav-link" href="/class/create">+ New Class</a>
                     </li>
                 </ul>
             </div>
