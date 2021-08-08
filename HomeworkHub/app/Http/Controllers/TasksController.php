@@ -27,8 +27,10 @@ class TasksController extends Controller
             'taskFile' => '',
         ]);
 
-        if($data['taskFile'] != ''){
+        if(array_key_exists('taskFile', $data)){
             $filePath = request('taskFile')->store('uploads', 'public');
+        }else{
+            $filePath = '';
         }
 
         auth()->user()->task()->create([
