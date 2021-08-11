@@ -22,7 +22,7 @@
                             <a class="nav-link" href="/register">+ New User</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="/admin/newclass">+ New Class</a>
+                            <a class="nav-link active" href="/class/create">+ New Class</a>
                         </li>
                     </ul>
                 </div>
@@ -40,16 +40,8 @@
                         <form action="/class" enctype="multipart/form-data" method="post">
                             @csrf
                             <div class="form-group row">
-                                <label for="school_id" class="col-md-4 col-form-label text-md-right">School ID</label>
-
                                 <div class="col-md-6">
-                                    <input id="school_id" type="text" class="form-control @error('school_id') is-invalid @enderror" name="school_id" value="{{ old('school_id') ?? auth()->User()->school_id }}" autofocus disabled>
-
-                                    @error('school_id')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
+                                    <input id="school_id" type="hidden" class="form-control" name="school_id" value="{{ old('school_id') ?? auth()->User()->school_id }}" >
                                 </div>
                             </div>
 

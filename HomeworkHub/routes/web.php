@@ -19,7 +19,6 @@ Auth::routes();
     Route::group(['middleware' => ['auth', 'admin']], function() {
         Route::get('/class/create', 'App\Http\Controllers\ClassroomsController@create');
         Route::post('/class', 'App\Http\Controllers\ClassroomsController@store');
-        Route::get('/admin/');
         Route::get('/admin/students', [App\Http\Controllers\AdminController::class, 'getStudents'])->name('students.show');
         Route::get('/admin/teachers', [App\Http\Controllers\AdminController::class, 'getTeachers'])->name('teachers.show');
         Route::get('/admin/admins', [App\Http\Controllers\AdminController::class, 'getAdmins'])->name('admins.show');

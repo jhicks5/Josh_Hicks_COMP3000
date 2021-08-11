@@ -45,11 +45,6 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-//    public function task()
-//    {
-//        return $this->hasMany(Task::class);
-//    }
-
     public function classroom()
     {
         return $this->belongsTo(Classroom::class, 'id');
